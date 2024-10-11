@@ -7,9 +7,9 @@
 #First, create a view that summarizes rental information for each customer.
 #The view could include the customer's ID, name, email address,
 #and total number of rentals (rental_count).
-CREATE VIEW customer_rent_info AS
+#CREATE VIEW customer_rent_info AS
 SELECT customer_id, last_name, email, COUNT(rental_id) AS rental_count
-FROM payment
+FROM rental
 JOIN customer
 USING (customer_id)
 GROUP BY customer_id;
